@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/alexrr2iggs/api-football-client/issues"
   },
-  "homepage": "https://github.com/alexrr2iggs/api-football-client#readme"
+  "homepage": "https://github.com/alexrr2iggs/api-football-client#readme",
+  "dependencies": {
+    "iggs-utils": "^1.0.7"
+  }
 }
