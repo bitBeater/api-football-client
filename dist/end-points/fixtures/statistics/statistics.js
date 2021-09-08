@@ -1,17 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.statistics = void 0;
-const iggs_utils_1 = require("iggs-utils");
-function statistics(search, xRapidApiKey) {
-    return iggs_utils_1.http.httpRequest({
-        method: 'GET',
-        url: 'https://api-football-v1.p.rapidapi.com/v3/fixtures/statistics',
-        searchParams: search,
-        headers: {
-            'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
-            'x-rapidapi-key': xRapidApiKey
-        }
-    }).then(response => JSON.parse(response.data));
-}
-exports.statistics = statistics;
+const utils_1 = require("../../../common/utils");
+/** https://www.api-football.com/documentation-v3#operation/get-fixtures-statistics */
+exports.statistics = utils_1.apiFootballRequest('https://api-football-v1.p.rapidapi.com/v3/fixtures/statistics');
 //# sourceMappingURL=statistics.js.map
