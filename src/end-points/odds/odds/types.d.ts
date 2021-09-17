@@ -1,6 +1,6 @@
 import { Bookmaker, Fixture, League } from '../../../common/types';
 
-export namespace oddsTypes {
+export module oddsTypes {
 	export interface SerachOdds {
 		/** The id of the fixture */
 		fixture?: number;

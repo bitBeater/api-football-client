@@ -1,6 +1,6 @@
 import { FixtureResult, RoundLeague, Team } from '../../../common/types';
 
-export namespace fixturesTypes {
+export module fixturesTypes {
 	export interface SearchFixtures {
 		/** The id of the fixture*/
 		id?: number;

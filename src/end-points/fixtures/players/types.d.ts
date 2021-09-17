@@ -1,6 +1,6 @@
 import { Player, Team } from '../../../common/types';
 
-export namespace palyersTypes {
+export module palyersTypes {
 	export interface SearchPlayersStatisticsByFixtureId {
 		/** The id of the fixture */
 		fixture: number;

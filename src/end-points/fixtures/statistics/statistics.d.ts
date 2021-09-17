@@ -1,6 +1,6 @@
 import { Team } from '../../../common/types';
 
-export namespace statisticsTypes {
+export module statisticsTypes {
 	export enum FixtureStatisticType {
 		SHOTS_ON_GOAL = 'Shots on Goal',
 		SHOTS_OFF_GOAL = 'Shots off Goal',
