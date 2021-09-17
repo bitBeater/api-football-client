@@ -1,1 +1,1 @@
-{"version":3,"file":"fixtures.d.ts","sourceRoot":"","sources":["../../../../src/end-points/fixtures/fixtures/fixtures.ts"],"names":[],"mappings":";AAAA,OAAO,EAAiB,cAAc,EAAE,eAAe,EAAE,MAAM,cAAc,CAAC;AAG9E,2EAA2E;AAC3E,eAAO,MAAM,QAAQ,qLAA2H,CAAC"}
+{"version":3,"file":"fixtures.d.ts","sourceRoot":"","sources":["../../../../src/end-points/fixtures/fixtures/fixtures.ts"],"names":[],"mappings":";AAAA,OAAO,EAAE,aAAa,IAAI,IAAI,EAAE,MAAM,cAAc,CAAC;AAGrD,2EAA2E;AAC3E,eAAO,MAAM,QAAQ,uLAAqI,CAAC"}

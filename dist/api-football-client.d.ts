@@ -1,20 +1,20 @@
 /// <reference types="node" />
 import { ApiFootballResponse } from './common/types';
-import { SearchFixtures, FixtureResponse } from './end-points/fixtures/fixtures/fixtures.d';
-import { FixtureStatisticsResponse, SearchFixtureStatistics } from './end-points/fixtures/statistics/statistics.d';
-import { SearchPlayersStatisticsByFixtureId, FixturesPlayersResponse } from './end-points/fixtures/players/types';
-import { SerachOdds, OddsResponse } from './end-points/odds/odds/types';
+import { fixturesTypes } from './end-points/fixtures/fixtures/fixtures.d';
+import { statisticsTypes } from './end-points/fixtures/statistics/statistics.d';
+import { palyersTypes } from './end-points/fixtures/players/types';
+import { oddsTypes } from './end-points/odds/odds/types';
 import { IncomingMessage } from 'http';
 export declare class ApiFootBallClient {
     private readonly xRapidApiKey;
     constructor(xRapidApiKey: string);
     /** https://www.api-football.com/documentation-v3#operation/get-fixtures */
-    fixtures(search: SearchFixtures): Promise<[ApiFootballResponse<SearchFixtures, FixtureResponse[]>, IncomingMessage]>;
+    fixtures(search: fixturesTypes.SearchFixtures): Promise<[ApiFootballResponse<fixturesTypes.SearchFixtures, fixturesTypes.FixtureResponse[]>, IncomingMessage]>;
     /** https://www.api-football.com/documentation-v3#operation/get-fixtures-statistics */
-    fixturesStatistics(search: SearchFixtureStatistics): Promise<[ApiFootballResponse<SearchFixtureStatistics, FixtureStatisticsResponse[]>, IncomingMessage]>;
+    fixturesStatistics(search: statisticsTypes.SearchFixtureStatistics): Promise<[ApiFootballResponse<statisticsTypes.SearchFixtureStatistics, statisticsTypes.FixtureStatisticsResponse[]>, IncomingMessage]>;
     /** https://www.api-football.com/documentation-v3#operation/get-fixtures-players */
-    fixturesPlayers(search: SearchPlayersStatisticsByFixtureId): Promise<[ApiFootballResponse<SearchPlayersStatisticsByFixtureId, FixturesPlayersResponse[]>, IncomingMessage]>;
+    fixturesPlayers(search: palyersTypes.SearchPlayersStatisticsByFixtureId): Promise<[ApiFootballResponse<palyersTypes.SearchPlayersStatisticsByFixtureId, palyersTypes.FixturesPlayersResponse[]>, IncomingMessage]>;
     /** https://www.api-football.com/documentation-v3#operation/get-odds */
-    odds(search: SerachOdds): Promise<[ApiFootballResponse<SerachOdds, OddsResponse[]>, IncomingMessage]>;
+    odds(search: oddsTypes.SerachOdds): Promise<[ApiFootballResponse<oddsTypes.SerachOdds, oddsTypes.OddsResponse[]>, IncomingMessage]>;
 }
 //# sourceMappingURL=api-football-client.d.ts.map
