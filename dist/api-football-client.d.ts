@@ -5,7 +5,7 @@ import { FixtureStatisticsResponse, SearchFixtureStatistics } from './end-points
 import { SearchPlayersStatisticsByFixtureId, FixturesPlayersResponse } from './end-points/fixtures/players/types';
 import { SerachOdds, OddsResponse } from './end-points/odds/odds/types';
 import { IncomingMessage } from 'http';
-export declare class ApiFootBAllClient {
+export declare class ApiFootBallClient {
     private readonly xRapidApiKey;
     constructor(xRapidApiKey: string);
     /** https://www.api-football.com/documentation-v3#operation/get-fixtures */

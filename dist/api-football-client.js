@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ApiFootBAllClient = void 0;
+exports.ApiFootBallClient = void 0;
 const fixtures_1 = require("./end-points/fixtures/fixtures/fixtures");
 const statistics_1 = require("./end-points/fixtures/statistics/statistics");
 const odds_1 = require("./end-points/odds/odds/odds");
 const players_1 = require("./end-points/fixtures/players/players");
-class ApiFootBAllClient {
+class ApiFootBallClient {
     constructor(xRapidApiKey) {
         this.xRapidApiKey = xRapidApiKey;
     }
@@ -26,5 +26,5 @@ class ApiFootBAllClient {
         return odds_1.odds(search, this.xRapidApiKey);
     }
 }
-exports.ApiFootBAllClient = ApiFootBAllClient;
+exports.ApiFootBallClient = ApiFootBallClient;
 //# sourceMappingURL=api-football-client.js.map

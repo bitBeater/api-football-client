@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.apiFootballRequest = exports.YYYYMMDD = void 0;
+exports.getAppFolder = exports.apiFootballRequest = exports.YYYYMMDD = void 0;
 const iggs_utils_1 = require("iggs-utils");
 function YYYYMMDD(date) {
     if (date)
@@ -24,4 +24,8 @@ function apiFootballRequest(url, parseSearch, method = 'GET') {
     };
 }
 exports.apiFootballRequest = apiFootballRequest;
+function getAppFolder() {
+    return require('path').resolve('./');
+}
+exports.getAppFolder = getAppFolder;
 //# sourceMappingURL=utils.js.map
