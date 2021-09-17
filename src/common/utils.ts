@@ -23,3 +23,7 @@ export function apiFootballRequest<R, T>(url: string, parseSearch?: (R) => any, 
 			.then(response => [JSON.parse(response?.data), response?.response]);
 	};
 }
+
+export function getAppFolder():string {
+	return require('path').resolve('./');
+}

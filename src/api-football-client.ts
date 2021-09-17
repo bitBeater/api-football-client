@@ -9,7 +9,7 @@ import { odds } from './end-points/odds/odds/odds';
 import { IncomingMessage } from 'http';
 import { players } from './end-points/fixtures/players/players';
 
-export class ApiFootBAllClient {
+export class ApiFootBallClient {
 	private readonly xRapidApiKey: string;
 
 	constructor(xRapidApiKey: string) {
