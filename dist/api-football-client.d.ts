@@ -1,10 +1,10 @@
 /// <reference types="node" />
 import { ApiFootballResponse } from './common/types';
-import { fixturesTypes } from './end-points/fixtures/fixtures/fixtures.d';
 import { statisticsTypes } from './end-points/fixtures/statistics/statistics.d';
 import { palyersTypes } from './end-points/fixtures/players/types';
 import { oddsTypes } from './end-points/odds/odds/types';
 import { IncomingMessage } from 'http';
+import { fixturesTypes } from '.';
 export declare class ApiFootBallClient {
     private readonly xRapidApiKey;
     constructor(xRapidApiKey: string);

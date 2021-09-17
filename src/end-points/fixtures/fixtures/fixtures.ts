@@ -1,10 +1,10 @@
-import { fixturesTypes as fixt } from './fixtures.d';
+import { fixturesTypes } from './fixtures.d';
 import { apiFootballRequest, YYYYMMDD } from '../../../common/utils';
 
 /** https://www.api-football.com/documentation-v3#operation/get-fixtures */
-export const fixtures = apiFootballRequest<fixt.SearchFixtures, fixt.FixtureResponse[]>('https://api-football-v1.p.rapidapi.com/v3/fixtures', parseSearch);
+export const fixtures = apiFootballRequest<fixturesTypes.SearchFixtures, fixturesTypes.FixtureResponse[]>('https://api-football-v1.p.rapidapi.com/v3/fixtures', parseSearch);
 
-function parseSearch(searchFixtures: fixt.SearchFixtures) {
+function parseSearch(searchFixtures: fixturesTypes.SearchFixtures) {
 	if (!searchFixtures) return;
 
 	const searchRequest = { ...searchFixtures } as unknown as SearchRequest;
@@ -55,7 +55,7 @@ interface SearchRequest {
 	round?: string;
 
 	/** The status short of the fixture */
-	status?: fixt.FixtureStatus;
+	status?: fixturesTypes.FixtureStatus;
 
 	/** A valid timezone from the endpoint Timezone */
 	timezone?: string;

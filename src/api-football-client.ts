@@ -1,5 +1,5 @@
 import { ApiFootballResponse } from './common/types';
-import { fixturesTypes } from './end-points/fixtures/fixtures/fixtures.d';
+
 import { fixtures } from './end-points/fixtures/fixtures/fixtures';
 import { statistics } from './end-points/fixtures/statistics/statistics';
 import { statisticsTypes } from './end-points/fixtures/statistics/statistics.d';
@@ -8,6 +8,7 @@ import { oddsTypes } from './end-points/odds/odds/types';
 import { odds } from './end-points/odds/odds/odds';
 import { IncomingMessage } from 'http';
 import { players } from './end-points/fixtures/players/players';
+import { fixturesTypes } from '.';
 
 export class ApiFootBallClient {
 	private readonly xRapidApiKey: string;
