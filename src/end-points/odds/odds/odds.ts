@@ -1,8 +1,8 @@
 import { apiFootballRequest, YYYYMMDD } from '../../../common/utils';
-import { oddsTypes } from './types';
+import { SerachOdds, OddsResponse } from './types';
 
 /** https://www.api-football.com/documentation-v3#operation/get-odds */
-export const odds = apiFootballRequest<oddsTypes.SerachOdds, oddsTypes.OddsResponse[]>('https://api-football-v1.p.rapidapi.com/v3/odds', parseSearch);
+export const odds = apiFootballRequest<SerachOdds, OddsResponse[]>('https://api-football-v1.p.rapidapi.com/v3/odds', parseSearch);
 
 interface SearchRequest {
 	/** The id of the fixture */
@@ -35,7 +35,7 @@ interface SearchRequest {
 	bet?: number;
 }
 
-function parseSearch(search: oddsTypes.SerachOdds): SearchRequest {
+function parseSearch(search: SerachOdds): SearchRequest {
 	if (!search) return;
 
 	const retVal = { ...search } as unknown as SearchRequest;
