@@ -24,6 +24,6 @@ export function apiFootballRequest<R, T>(url: string, parseSearch?: (R) => any, 
 	};
 }
 
-export function getAppFolder():string {
+export function getAppFolder(): string {
 	return require('path').resolve('./');
 }

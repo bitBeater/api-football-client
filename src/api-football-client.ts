@@ -1,5 +1,5 @@
 import { ApiFootballResponse } from './common/types';
-import { fixturesTypes  } from './end-points/fixtures/fixtures/fixtures.d';
+import { fixturesTypes } from './end-points/fixtures/fixtures/fixtures.d';
 import { fixtures } from './end-points/fixtures/fixtures/fixtures';
 import { statistics } from './end-points/fixtures/statistics/statistics';
 import { statisticsTypes } from './end-points/fixtures/statistics/statistics.d';

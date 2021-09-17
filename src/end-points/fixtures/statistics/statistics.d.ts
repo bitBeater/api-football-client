@@ -1,6 +1,6 @@
 import { Team } from '../../../common/types';
 
-export namespace statisticsTypes{
+export namespace statisticsTypes {
 	export enum FixtureStatisticType {
 		SHOTS_ON_GOAL = 'Shots on Goal',
 		SHOTS_OFF_GOAL = 'Shots off Goal',
@@ -19,12 +19,12 @@ export namespace statisticsTypes{
 		PASSES_ACCURATE = 'Passes accurate',
 		PASSES_PERC = 'Passes %'
 	}
-	
+
 	export interface FixtureStatisticsResponse {
 		team: Team;
 		statistics: { type: FixtureStatisticType; value: number }[];
 	}
-	
+
 	export interface SearchFixtureStatistics {
 		fixture: number;
 		team?: number;

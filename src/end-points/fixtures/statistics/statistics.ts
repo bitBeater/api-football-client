@@ -1,4 +1,4 @@
-import { statisticsTypes   } from './statistics.d';
+import { statisticsTypes } from './statistics.d';
 import { apiFootballRequest } from '../../../common/utils';
 
 /** https://www.api-football.com/documentation-v3#operation/get-fixtures-statistics */

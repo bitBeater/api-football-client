@@ -1,1 +1,1 @@
-{"version":3,"file":"statistics.d.ts","sourceRoot":"","sources":["../../../../src/end-points/fixtures/statistics/statistics.ts"],"names":[],"mappings":";AAAA,OAAO,EAAE,eAAe,EAAI,MAAM,gBAAgB,CAAC;AAGnD,sFAAsF;AACtF,eAAO,MAAM,UAAU,oPAA4K,CAAC"}
+{"version":3,"file":"statistics.d.ts","sourceRoot":"","sources":["../../../../src/end-points/fixtures/statistics/statistics.ts"],"names":[],"mappings":";AAAA,OAAO,EAAE,eAAe,EAAE,MAAM,gBAAgB,CAAC;AAGjD,sFAAsF;AACtF,eAAO,MAAM,UAAU,oPAA4K,CAAC"}
