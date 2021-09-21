@@ -9,7 +9,7 @@ function YYYYMMDD(date) {
 exports.YYYYMMDD = YYYYMMDD;
 function apiFootballRequest(url, parseSearch, method = 'GET') {
     return (search, xRapidApiKey) => {
-        const _search = search || (parseSearch === null || parseSearch === void 0 ? void 0 : parseSearch(search));
+        const _search = search || parseSearch?.(search);
         return iggs_utils_1.http
             .httpRequest({
             method,
@@ -20,7 +20,7 @@ function apiFootballRequest(url, parseSearch, method = 'GET') {
                 'x-rapidapi-key': xRapidApiKey
             }
         })
-            .then(response => [JSON.parse(response === null || response === void 0 ? void 0 : response.data), response === null || response === void 0 ? void 0 : response.response]);
+            .then(response => [JSON.parse(response?.data), response?.response]);
     };
 }
 exports.apiFootballRequest = apiFootballRequest;

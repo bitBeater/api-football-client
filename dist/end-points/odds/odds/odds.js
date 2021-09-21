@@ -7,9 +7,9 @@ exports.odds = utils_1.apiFootballRequest('https://api-football-v1.p.rapidapi.co
 function parseSearch(search) {
     if (!search)
         return;
-    const retVal = Object.assign({}, search);
-    if (search === null || search === void 0 ? void 0 : search.date)
-        retVal.date = utils_1.YYYYMMDD(search === null || search === void 0 ? void 0 : search.date);
+    const retVal = { ...search };
+    if (search?.date)
+        retVal.date = utils_1.YYYYMMDD(search?.date);
     return retVal;
 }
 //# sourceMappingURL=odds.js.map
