@@ -1,6 +1,6 @@
 {
   "name": "api-football-client",
-  "version": "1.0.37",
+  "version": "1.0.38",
   "description": "node api football client",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
