@@ -2,11 +2,13 @@ import { ApiFootballResponse } from './common/types';
 
 import { fixtures } from './end-points/fixtures/fixtures/fixtures';
 import { statistics } from './end-points/fixtures/statistics/statistics';
-
 import { odds } from './end-points/odds/odds/odds';
 import { IncomingMessage } from 'http';
 import { players } from './end-points/fixtures/players/players';
-import { SearchFixtures, FixtureResponse, SearchFixtureStatistics, FixtureStatisticsResponse, SearchPlayersStatisticsByFixtureId, FixturesPlayersResponse, SerachOdds, OddsResponse } from '.';
+import { FixtureResponse, SearchFixtures } from './end-points/fixtures/fixtures/types';
+import { FixtureStatisticsResponse, SearchFixtureStatistics } from './end-points/fixtures/statistics/types';
+import { FixturesPlayersResponse, SearchPlayersStatisticsByFixtureId } from './end-points/fixtures/players/types';
+import { OddsResponse, SerachOdds } from './end-points/odds/odds/types';
 
 export class ApiFootBallClient {
 	private readonly xRapidApiKey: string;

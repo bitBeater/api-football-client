@@ -1,7 +1,10 @@
 /// <reference types="node" />
 import { ApiFootballResponse } from './common/types';
 import { IncomingMessage } from 'http';
-import { SearchFixtures, FixtureResponse, SearchFixtureStatistics, FixtureStatisticsResponse, SearchPlayersStatisticsByFixtureId, FixturesPlayersResponse, SerachOdds, OddsResponse } from '.';
+import { FixtureResponse, SearchFixtures } from './end-points/fixtures/fixtures/types';
+import { FixtureStatisticsResponse, SearchFixtureStatistics } from './end-points/fixtures/statistics/types';
+import { FixturesPlayersResponse, SearchPlayersStatisticsByFixtureId } from './end-points/fixtures/players/types';
+import { OddsResponse, SerachOdds } from './end-points/odds/odds/types';
 export declare class ApiFootBallClient {
     private readonly xRapidApiKey;
     constructor(xRapidApiKey: string);
