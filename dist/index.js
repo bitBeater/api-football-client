@@ -14,8 +14,8 @@ exports.ApiFootBallClient = void 0;
 var api_football_client_1 = require("./api-football-client");
 Object.defineProperty(exports, "ApiFootBallClient", { enumerable: true, get: function () { return api_football_client_1.ApiFootBallClient; } });
 __exportStar(require("./common/types"), exports);
-__exportStar(require("./end-points/fixtures/fixtures/fixtures.d"), exports);
-__exportStar(require("./end-points/fixtures/statistics/statistics.d"), exports);
+__exportStar(require("./end-points/fixtures/fixtures/types"), exports);
+__exportStar(require("./end-points/fixtures/statistics/types"), exports);
 __exportStar(require("./end-points/fixtures/players/types"), exports);
 __exportStar(require("./end-points/odds/odds/types"), exports);
 //# sourceMappingURL=index.js.map
