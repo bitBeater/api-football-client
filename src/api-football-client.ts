@@ -1,4 +1,6 @@
-import { ApiFootballResponse } from './common/types';
+import { Logger } from '..';
+
+import { ApiFootballResponse, Logger } from './common/types';
 
 import { fixtures } from './end-points/fixtures/fixtures/fixtures';
 import { statistics } from './end-points/fixtures/statistics/statistics';
@@ -12,28 +14,30 @@ import { OddsResponse, SerachOdds } from './end-points/odds/odds/types';
 
 export class ApiFootBallClient {
 	private readonly xRapidApiKey: string;
+	private readonly logger: Logger;
 
-	constructor(xRapidApiKey: string) {
+	constructor(xRapidApiKey: string, logger?: Logger) {
 		this.xRapidApiKey = xRapidApiKey;
+		this.logger = logger;
 	}
 
 	/** https://www.api-football.com/documentation-v3#operation/get-fixtures */
 	public fixtures(search: SearchFixtures): Promise<[ApiFootballResponse<SearchFixtures, FixtureResponse[]>, IncomingMessage]> {
-		return fixtures(search, this.xRapidApiKey);
+		return fixtures(search, this.xRapidApiKey, this.logger);
 	}
 
 	/** https://www.api-football.com/documentation-v3#operation/get-fixtures-statistics */
 	public fixturesStatistics(search: SearchFixtureStatistics): Promise<[ApiFootballResponse<SearchFixtureStatistics, FixtureStatisticsResponse[]>, IncomingMessage]> {
-		return statistics(search, this.xRapidApiKey);
+		return statistics(search, this.xRapidApiKey, this.logger);
 	}
 
 	/** https://www.api-football.com/documentation-v3#operation/get-fixtures-players */
 	public fixturesPlayers(search: SearchPlayersStatisticsByFixtureId): Promise<[ApiFootballResponse<SearchPlayersStatisticsByFixtureId, FixturesPlayersResponse[]>, IncomingMessage]> {
-		return players(search, this.xRapidApiKey);
+		return players(search, this.xRapidApiKey, this.logger);
 	}
 
 	/** https://www.api-football.com/documentation-v3#operation/get-odds */
 	public odds(search: SerachOdds): Promise<[ApiFootballResponse<SerachOdds, OddsResponse[]>, IncomingMessage]> {
-		return odds(search, this.xRapidApiKey);
+		return odds(search, this.xRapidApiKey, this.logger);
 	}
 }

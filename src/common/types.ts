@@ -74,3 +74,12 @@ export interface Bookmaker {
 	name: string;
 	bets: Bet[];
 }
+
+export interface Logger {
+	trace?(...data: any[]);
+	debug?(...data: any[]);
+	info?(...data: any[]);
+	warn?(...data: any[]);
+	error?(...data: any[]);
+	fatal?(...data: any[]);
+}
