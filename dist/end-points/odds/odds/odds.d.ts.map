@@ -1,1 +1,1 @@
-{"version":3,"file":"odds.d.ts","sourceRoot":"","sources":["../../../../src/end-points/odds/odds/odds.ts"],"names":[],"mappings":";AACA,OAAO,EAAE,UAAU,EAAE,YAAY,EAAE,MAAM,SAAS,CAAC;AAEnD,uEAAuE;AACvE,eAAO,MAAM,IAAI,iMAAgH,CAAC"}
+{"version":3,"file":"odds.d.ts","sourceRoot":"","sources":["../../../../src/end-points/odds/odds/odds.ts"],"names":[],"mappings":";AACA,OAAO,EAAE,UAAU,EAAE,YAAY,EAAE,MAAM,SAAS,CAAC;AAEnD,uEAAuE;AACvE,eAAO,MAAM,IAAI,iLAAgH,CAAC"}

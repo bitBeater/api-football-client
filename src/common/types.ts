@@ -83,3 +83,11 @@ export interface Logger {
 	error?(...data: any[]);
 	fatal?(...data: any[]);
 }
+
+export interface ApiRequest<R, T> {
+	search: R;
+	xRapidApiKey: string;
+	logger?: Logger;
+	onBeforeExecute?: () => void;
+	onAfterExecute?: () => void;
+}
