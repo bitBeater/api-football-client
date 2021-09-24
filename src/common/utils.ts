@@ -1,5 +1,5 @@
 import { http } from 'iggs-utils';
-import { ApiFootballResponse, Logger, ApiRequest } from './types';
+import { ApiFootballResponse, ApiRequest } from './types';
 import { IncomingMessage } from 'http';
 
 export function YYYYMMDD(date: Date): string {
@@ -22,18 +22,28 @@ export function apiFootballRequest<R, T>(url: string, parseSearch?: (R) => any, 
 		return new Promise<void>(r => {
 			s?.logger?.debug?.('start http api-request: ', JSON.stringify(_search));
 			s?.logger?.trace?.(JSON.stringify(httpReq));
-			s?.onBeforeExecute?.();
+			try {
+				s?.onBeforeExecute?.();
+			} catch (error) {
+				s?.logger?.error?.(error);
+			}
+
 			r();
 		})
 			.then(() => http.httpRequest(httpReq))
 			.then(response => {
-				s.onAfterExecute();
-				return response;
-			})
-			.then(response => [JSON.parse(response?.data), response?.response]);
+				const resp: ApiFootballResponse<R, T> = JSON.parse(response?.data);
+				resp?.errors?.forEach(s?.logger?.error);
+				try {
+					s.onAfterExecute();
+				} catch (error) {
+					s?.logger?.error?.(error);
+				}
+
+				return [resp, response?.response];
+			});
 	};
 }
-
 export function getAppFolder(): string {
 	return require('path').resolve('./');
 }

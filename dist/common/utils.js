@@ -21,18 +21,30 @@ function apiFootballRequest(url, parseSearch, method) {
             }
         };
         return new Promise(function (r) {
-            var _a, _b, _c, _d, _e;
+            var _a, _b, _c, _d, _e, _f, _g;
             (_b = (_a = s === null || s === void 0 ? void 0 : s.logger) === null || _a === void 0 ? void 0 : _a.debug) === null || _b === void 0 ? void 0 : _b.call(_a, 'start http api-request: ', JSON.stringify(_search));
             (_d = (_c = s === null || s === void 0 ? void 0 : s.logger) === null || _c === void 0 ? void 0 : _c.trace) === null || _d === void 0 ? void 0 : _d.call(_c, JSON.stringify(httpReq));
-            (_e = s === null || s === void 0 ? void 0 : s.onBeforeExecute) === null || _e === void 0 ? void 0 : _e.call(s);
+            try {
+                (_e = s === null || s === void 0 ? void 0 : s.onBeforeExecute) === null || _e === void 0 ? void 0 : _e.call(s);
+            }
+            catch (error) {
+                (_g = (_f = s === null || s === void 0 ? void 0 : s.logger) === null || _f === void 0 ? void 0 : _f.error) === null || _g === void 0 ? void 0 : _g.call(_f, error);
+            }
             r();
         })
             .then(function () { return iggs_utils_1.http.httpRequest(httpReq); })
             .then(function (response) {
-            s.onAfterExecute();
-            return response;
-        })
-            .then(function (response) { return [JSON.parse(response === null || response === void 0 ? void 0 : response.data), response === null || response === void 0 ? void 0 : response.response]; });
+            var _a, _b, _c, _d;
+            var resp = JSON.parse(response === null || response === void 0 ? void 0 : response.data);
+            (_a = resp === null || resp === void 0 ? void 0 : resp.errors) === null || _a === void 0 ? void 0 : _a.forEach((_b = s === null || s === void 0 ? void 0 : s.logger) === null || _b === void 0 ? void 0 : _b.error);
+            try {
+                s.onAfterExecute();
+            }
+            catch (error) {
+                (_d = (_c = s === null || s === void 0 ? void 0 : s.logger) === null || _c === void 0 ? void 0 : _c.error) === null || _d === void 0 ? void 0 : _d.call(_c, error);
+            }
+            return [resp, response === null || response === void 0 ? void 0 : response.response];
+        });
     };
 }
 exports.apiFootballRequest = apiFootballRequest;
