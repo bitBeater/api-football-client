@@ -37,7 +37,10 @@ function apiFootballRequest(url, parseSearch, method) {
             var _a, _b, _c;
             var resp = JSON.parse(response === null || response === void 0 ? void 0 : response.data);
             if (isNotSubscribedToApi(resp)) {
-                resp.errors = [resp.message + ' or invalid "xRapidApiKey":  ' + (s === null || s === void 0 ? void 0 : s.xRapidApiKey)];
+                if (resp.message === 'You are not subscribed to this API.')
+                    resp.errors = [resp.message + ' or invalid "xRapidApiKey":  ' + (s === null || s === void 0 ? void 0 : s.xRapidApiKey)];
+                else
+                    resp.errors = [resp.message];
             }
             (_a = resp === null || resp === void 0 ? void 0 : resp.errors) === null || _a === void 0 ? void 0 : _a.forEach(function (e) { var _a; return (_a = s === null || s === void 0 ? void 0 : s.logger) === null || _a === void 0 ? void 0 : _a.error(e); });
             try {
