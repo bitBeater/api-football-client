@@ -34,14 +34,17 @@ function apiFootballRequest(url, parseSearch, method) {
         })
             .then(function () { return iggs_utils_1.http.httpRequest(httpReq); })
             .then(function (response) {
-            var _a, _b, _c, _d;
+            var _a, _b, _c;
             var resp = JSON.parse(response === null || response === void 0 ? void 0 : response.data);
-            (_a = resp === null || resp === void 0 ? void 0 : resp.errors) === null || _a === void 0 ? void 0 : _a.forEach((_b = s === null || s === void 0 ? void 0 : s.logger) === null || _b === void 0 ? void 0 : _b.error);
+            if (isNotSubscribedToApi(resp)) {
+                resp.errors = [resp.message + ' or invalid "xRapidApiKey":  ' + (s === null || s === void 0 ? void 0 : s.xRapidApiKey)];
+            }
+            (_a = resp === null || resp === void 0 ? void 0 : resp.errors) === null || _a === void 0 ? void 0 : _a.forEach(function (e) { var _a; return (_a = s === null || s === void 0 ? void 0 : s.logger) === null || _a === void 0 ? void 0 : _a.error(e); });
             try {
                 s.onAfterExecute();
             }
             catch (error) {
-                (_d = (_c = s === null || s === void 0 ? void 0 : s.logger) === null || _c === void 0 ? void 0 : _c.error) === null || _d === void 0 ? void 0 : _d.call(_c, error);
+                (_c = (_b = s === null || s === void 0 ? void 0 : s.logger) === null || _b === void 0 ? void 0 : _b.error) === null || _c === void 0 ? void 0 : _c.call(_b, error);
             }
             return [resp, response === null || response === void 0 ? void 0 : response.response];
         });
@@ -52,4 +55,8 @@ function getAppFolder() {
     return require('path').resolve('./');
 }
 exports.getAppFolder = getAppFolder;
+function isNotSubscribedToApi(response) {
+    if (response === void 0) { response = {}; }
+    return Object.keys(response).includes('message');
+}
 //# sourceMappingURL=utils.js.map

@@ -33,7 +33,13 @@ export function apiFootballRequest<R, T>(url: string, parseSearch?: (R) => any, 
 			.then(() => http.httpRequest(httpReq))
 			.then(response => {
 				const resp: ApiFootballResponse<R, T> = JSON.parse(response?.data);
-				resp?.errors?.forEach(s?.logger?.error);
+
+				if (isNotSubscribedToApi(resp)) {
+					resp.errors = [resp.message + ' or invalid "xRapidApiKey":  ' + s?.xRapidApiKey];
+				}
+
+				resp?.errors?.forEach(e => s?.logger?.error(e));
+
 				try {
 					s.onAfterExecute();
 				} catch (error) {
@@ -44,6 +50,11 @@ export function apiFootballRequest<R, T>(url: string, parseSearch?: (R) => any, 
 			});
 	};
 }
+
 export function getAppFolder(): string {
 	return require('path').resolve('./');
+}
+
+function isNotSubscribedToApi(response = {}): response is { message: string } {
+	return Object.keys(response).includes('message');
 }
