@@ -20,7 +20,7 @@ export function apiFootballRequest<R, T>(url: string, parseSearch?: (R) => any, 
 		};
 
 		return new Promise<void>(r => {
-			s?.logger?.debug?.('start http api-request: ', JSON.stringify(_search));
+			s?.logger?.debug?.('start http api-request: ', url, JSON.stringify(_search));
 			s?.logger?.trace?.(JSON.stringify(httpReq));
 			try {
 				s?.onBeforeExecute?.();

@@ -22,7 +22,7 @@ function apiFootballRequest(url, parseSearch, method) {
         };
         return new Promise(function (r) {
             var _a, _b, _c, _d, _e, _f, _g;
-            (_b = (_a = s === null || s === void 0 ? void 0 : s.logger) === null || _a === void 0 ? void 0 : _a.debug) === null || _b === void 0 ? void 0 : _b.call(_a, 'start http api-request: ', JSON.stringify(_search));
+            (_b = (_a = s === null || s === void 0 ? void 0 : s.logger) === null || _a === void 0 ? void 0 : _a.debug) === null || _b === void 0 ? void 0 : _b.call(_a, 'start http api-request: ', url, JSON.stringify(_search));
             (_d = (_c = s === null || s === void 0 ? void 0 : s.logger) === null || _c === void 0 ? void 0 : _c.trace) === null || _d === void 0 ? void 0 : _d.call(_c, JSON.stringify(httpReq));
             try {
                 (_e = s === null || s === void 0 ? void 0 : s.onBeforeExecute) === null || _e === void 0 ? void 0 : _e.call(s);
