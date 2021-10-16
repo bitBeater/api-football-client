@@ -34,6 +34,8 @@ export function apiFootballRequest<R, T>(url: string, parseSearch?: (R) => any, 
 			.then(response => {
 				const resp: ApiFootballResponse<R, T> = JSON.parse(response?.data);
 
+				s?.logger?.debug?.('response from http api-request: ', url, JSON.stringify(_search));
+
 				if (isNotSubscribedToApi(resp)) {
 					if (resp.message === 'You are not subscribed to this API.') resp.errors = [resp.message + ' or invalid "xRapidApiKey":  ' + s?.xRapidApiKey];
 					else resp.errors = [resp.message];

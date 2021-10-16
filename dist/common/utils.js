@@ -34,20 +34,21 @@ function apiFootballRequest(url, parseSearch, method) {
         })
             .then(function () { return iggs_utils_1.http.httpRequest(httpReq); })
             .then(function (response) {
-            var _a, _b, _c;
+            var _a, _b, _c, _d, _e;
             var resp = JSON.parse(response === null || response === void 0 ? void 0 : response.data);
+            (_b = (_a = s === null || s === void 0 ? void 0 : s.logger) === null || _a === void 0 ? void 0 : _a.debug) === null || _b === void 0 ? void 0 : _b.call(_a, 'response from http api-request: ', url, JSON.stringify(_search));
             if (isNotSubscribedToApi(resp)) {
                 if (resp.message === 'You are not subscribed to this API.')
                     resp.errors = [resp.message + ' or invalid "xRapidApiKey":  ' + (s === null || s === void 0 ? void 0 : s.xRapidApiKey)];
                 else
                     resp.errors = [resp.message];
             }
-            (_a = resp === null || resp === void 0 ? void 0 : resp.errors) === null || _a === void 0 ? void 0 : _a.forEach(function (e) { var _a; return (_a = s === null || s === void 0 ? void 0 : s.logger) === null || _a === void 0 ? void 0 : _a.error(e); });
+            (_c = resp === null || resp === void 0 ? void 0 : resp.errors) === null || _c === void 0 ? void 0 : _c.forEach(function (e) { var _a; return (_a = s === null || s === void 0 ? void 0 : s.logger) === null || _a === void 0 ? void 0 : _a.error(e); });
             try {
                 s.onAfterExecute();
             }
             catch (error) {
-                (_c = (_b = s === null || s === void 0 ? void 0 : s.logger) === null || _b === void 0 ? void 0 : _b.error) === null || _c === void 0 ? void 0 : _c.call(_b, error);
+                (_e = (_d = s === null || s === void 0 ? void 0 : s.logger) === null || _d === void 0 ? void 0 : _d.error) === null || _e === void 0 ? void 0 : _e.call(_d, error);
             }
             return [resp, response === null || response === void 0 ? void 0 : response.response];
         });
